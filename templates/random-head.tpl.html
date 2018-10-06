@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head prefix="og: http://ogp.me/ns#">
+	<title>Donna</title>
+
+	<meta charset="utf-8" />
+    <meta name="theme-color" content="black" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<meta name="description" content="" />
+	<meta http-equiv="content-language" content="fr_FR" />
+	<meta name="language" content="fr_FR" />
+
+	<meta property="og:title" content="Title" />
+	<meta property="og:type" content="music.album" />
+	<meta property="og:url" content="https://site.com" />
+	<meta property="og:description" content="Description to display" />
+	<meta property="og:image" content="https://site.com/images/index.jpg" />
+	<meta property="og:image:secure_url" content="https://site.com/images/index.jpg" />
+	<meta property="og:image:width" content="666" />
+	<meta property="og:image:height" content="666" />
+	<meta property="og:image:type" content="image/jpeg">
+	<meta property="og:audio" content="https://site.com/audio/teaser.mp3" />
+	<meta property="og:audio:url" content="https://site.com/audio/teaser.mp3" />
+	<meta property="og:audio:secure_url" content="site.com/audio/teaser.mp3">
+	<meta property="og:audio:type" content="audio/mpeg">	
+	<meta property="fb:app_id" content="facebook app id" />
+
+	<link rel="icon" type="image/jpeg" href="images/index.jpg" />
+	<link rel="manifest" href="/manifest.json">
+	<link href="https://fonts.googleapis.com/css?family=Gorditas" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<style type="text/css">
+		body {	
+			font-family:'Gorditas';
+		/*	font-size: 2em; */
+			color: gold; 
+			background-color: black;
+		/*	background-image: url(images/index.jpg);   */
+		    background-size: 100%;	
+			}
+		h1 {font-size: 2.5em; text-align: center}
+		h2 {background-color: rgba(255,255,0,0.5); color:red;}
+		li {list-style-type: none; color: gold; display:none;font-size: 2.5em; text-align: center}
+		a:link {color: gold;}
+		a:visited {color: red;} 
+		a:active {color: white;}
+	/*	a {color: gold; text-decoration: none;}  */
+	/*	a:hover {background-color: yellow; color: red;} */
+	/*	.hilite {display:block;}						*/
+		.material-icons.big { font-size: 8em;}
+	</style>
+</head>
+
+<body>
+<h1>Band name</h1>
+
+<a id="play" title="Plays a random song" href="#" onclick="next();return false;"><i class="material-icons big">skip_next</i></a>
+<a id="pause" title="Pauses the music" href="#" onclick="pause();return false;"><i class="material-icons big">pause</i></a>
+<img id='id3artwork' width=120px>&nbsp;&nbsp;<span id="id3title" style="font-size: 2em"></span>
+	

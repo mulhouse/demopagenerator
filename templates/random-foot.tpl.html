@@ -1,0 +1,151 @@
+
+<p>
+	Download <a href="https://github.com/archive/master.zip">all tracks</a><br>
+	<a href="mailto:contact@site.com?subject=contact">Write</a> to the band<br>
+	<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr"><img src="https://licensebuttons.net/l/by-nc-sa/3.0/88x31.png"></a>
+</p>
+
+<script type="text/javascript" src="musicmetadata.min.js"></script>
+	
+<script type="text/javascript">
+var curTrack = -1;
+
+// https://github.com/leetreveil/musicmetadata
+// fetch/xhr loads whole file to read id3
+// better use https://github.com/aadsm/jsmediatags ?
+
+function showMetaData(data) {
+    musicmetadata(data, function (err, result) {
+    if (err) throw err;
+ //   console.log(result);
+    if (result.picture.length > 0) {
+      var picture = result.picture[0];
+      var url = URL.createObjectURL(new Blob([picture.data], {'type': 'image/' + picture.format}));
+      var image = document.getElementById('id3artwork');
+      var body = document.getElementsByTagName('body')[0];
+	  //  body.style.backgroundImage = 'url('+url+')';
+      image.src = url;
+
+    }
+	// 2do : display filename if no id3
+    var title = document.getElementById('id3title');
+	title.innerHTML = result.title;
+//    var div = document.getElementById('info');
+//    div.innerText = JSON.stringify(result, undefined, 2);
+  });
+}
+
+function fetchFile(url) {
+if (self.fetch) {
+	fetch(url)
+	.then(function(response) {
+	  return response.arrayBuffer();
+	})
+	.then(function(ab) {
+		showMetaData(ab);
+	})
+	.catch(function(){
+		console.log("fetch failed");
+		xhrFile(url);
+	});
+}
+else {
+	xhrFile(url);
+}
+
+} 
+
+function xhrFile(url){
+  var xhr = new XMLHttpRequest();
+  xhr.responseType = "arraybuffer";
+  xhr.open("get", url, true);
+  xhr.onload = function(e) {
+    showMetaData(e.target.response);
+  }  
+  xhr.onerror = function() {
+    console.log("xhr failed");
+  }
+  xhr.send();
+}
+
+function pause(){
+	var audios = document.getElementsByTagName('audio');
+
+	if (songPlaying()<0){ 
+		if (curTrack<0) next();
+		else audios[curTrack].play();
+	}
+	else audios[curTrack].pause();
+}
+
+function songPlaying() {
+	var playing = -1;
+	var audios = document.getElementsByTagName('audio');
+	for(var i = 0, len = audios.length; i < len;i++){
+		if (!audios[i].paused) playing = i;
+	}
+	return playing;
+}
+
+function next(){
+    var audios = document.getElementsByTagName('audio');
+    var len= audios.length;
+    var nTrack = (curTrack + Math.floor(Math.random() * (len-1) )+1)%len;
+
+
+    if (songPlaying()<0 && curTrack>=0) {		// continues paused playing
+    	audios[curTrack].play();
+    	// console.log(curTrack);
+    }
+    else {
+        audios[nTrack].currentTime=0;	
+    	audios[nTrack].play();					// starts random track
+    	curTrack = nTrack;
+     	// console.log(nTrack, len);
+    }
+}
+
+/* Stops all others players when play */	
+document.addEventListener('play', function(e){
+    var audios = document.getElementsByTagName('audio');
+    var titles = document.getElementsByTagName('li');
+    for(var i = 0, len = audios.length; i < len;i++){
+        titles[i].classList.remove("hilite");
+        if(audios[i] != e.target){
+            audios[i].pause();
+        }
+        else {
+        	// console.log(titles[i].innerHTML);
+        	titles[i].classList.add("hilite");
+        	// console.log(e.target.currentSrc);
+        	// console.log(audios[i].currentSrc)
+        	fetchFile(audios[i].currentSrc);
+        }
+    }
+}, true);
+
+/* Starts next player when one song has ended 
+	without resetting time to zero*/
+document.addEventListener('ended', function(e){
+    var audios = document.getElementsByTagName('audio');
+    for(var i = 0, len = audios.length; i < len;i++){
+        if(audios[i] == e.target){
+        	var nTrack = (i + Math.floor(Math.random() * (len-1) )+1)%len;
+            console.log(nTrack, len);
+            audios[nTrack].play();
+        }
+    }
+}, true);
+
+/* empty SW for add to homescreen prompt on android devices */
+if ('serviceWorker' in navigator) {
+  console.log("Will service worker register?");
+  navigator.serviceWorker.register('service-worker.js').then(function(reg){
+    console.log("Yes it did.");
+  }).catch(function(err) {
+    console.log("No it didn't. This happened: ", err)
+  });
+}
+</script>
+</body>
+</html>
