@@ -2,7 +2,7 @@
 # favicon ? 
 
 OUTFILE="./index.html"
-SHAREBTNS=k
+SHAREBTNS=YES
 
 cat ./templates/random-head.tpl.html > $OUTFILE
 
