@@ -3,8 +3,10 @@ Some bands wants to share their music and don't want to be on big platforms such
 This is a bash script to generate a single static mobile friendly html5 page from media files presents in /audio (and albums subdirs).
 
 Examples : 
-* https://mulhouse.github.io/moncheri/
-* https://mulhouse.github.io/mutantpillow/
+* [Albums list](https://mulhouse.github.io/mutantpillow/)
+* [Random](https://mulhouse.github.io/moncheri/random.html)
+* [Random + id3](https://mulhouse.github.io/moncheri/randomid3.html)
+* [List + random](https://mulhouse.github.io/moncheri/)
 
 ## Features
 * each track is playable and downloadable
@@ -28,7 +30,7 @@ Examples :
 4. Run the `./genpage` script
 5. Customize the generate `index.html` page :
     * Band name, description, contact, links (share btns, mail contact, download all)
-    * Icons (PWA manifest, favicon), background picture
+    * Icons ([PWA manifest](https://app-manifest.firebaseapp.com/), favicon), background picture
     * Style (colors, font)
     * Change the license
 6. Enjoy (example: push to your own repo then setup github page)
