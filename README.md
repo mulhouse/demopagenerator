@@ -1,10 +1,12 @@
 # Demo Page Generator
-Some bands wants to share their music and don't want to be on big platforms such as bondcamp, spitify, soundclown, ...
+Some bands wants to share their music and don't want to be on big platforms.
 This is a bash script to generate a single static mobile friendly html5 page from media files presents in /audio (and albums subdirs).
 
 Examples : 
-* https://mulhouse.github.io/moncheri/
-* https://mulhouse.github.io/mutantpillow/
+* [Albums list](https://mulhouse.github.io/mutantpillow/)
+* [Random](https://mulhouse.github.io/moncheri/random.html)
+* [Random + id3](https://mulhouse.github.io/moncheri/randomid3.html)
+* [List + random](https://mulhouse.github.io/moncheri/)
 
 ## Features
 * each track is playable and downloadable
@@ -19,7 +21,7 @@ Examples :
 * can add social buttons without tracking with https://sharingbuttons.io/
 
 ## How to use
-1. Clone this project
+1. Fork/clone this project
 2. Setup your audio dir :
     * 1 subdir per album
     * if you use id3, be sure all files are well tagged
@@ -28,10 +30,10 @@ Examples :
 4. Run the `./genpage` script
 5. Customize the generate `index.html` page :
     * Band name, description, contact, links (share btns, mail contact, download all)
-    * Icons (PWA manifest, favicon), background picture
+    * Icons ([PWA manifest](https://app-manifest.firebaseapp.com/), favicon), background picture
     * Style (colors, font)
     * Change the license
-6. Enjoy (example: push to your own repo then setup github page)
+6. Put it online
 
 ## License
 Do whatever you want
