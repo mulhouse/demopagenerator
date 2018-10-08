@@ -1,0 +1,143 @@
+body {
+  background: #222;
+  background: #3A1C71;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(45deg, #FFAF7B, #D76D77, #3A1C71);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(45deg, #FFAF7B, #D76D77, #3A1C71); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-size:100% 150%;
+  background-repeat:no-repeat;
+
+}
+body #wrapper {
+  display: block;
+  max-width: 1200px;
+  float: none;
+  margin: 0px auto;
+  padding-top:50px;
+}
+body #wrapper * {
+  color: #fff;
+  text-align: center;
+}
+
+body #footer {
+    position:absolute;
+    bottom:-50px;
+    text-align:center;
+    width:100vw;
+    left:0;
+    padding:50px 20px;
+    z-index:3;
+}
+
+body #footer:before{
+	content:'';
+	position:absolute;
+	width:150vw;
+	height:120%;
+	top:-10%;
+	left:-25vw;
+	background:rgba(0,0,0,0.15);
+	z-index:-1;
+}
+
+body{
+    min-height:100vh;
+}
+
+body #wrapper{
+    padding-bottom:300px;
+}
+
+body .cc{
+    margin-top:15px;
+    display:inline-block;
+}
+
+#bars {
+  height: 20px;
+  position: relative;
+  width:80px;
+  display: table;
+  margin:0 auto 0;
+  padding-top:50px;
+  }
+  
+  .playing .bar{
+	  animation: sound 0ms -100ms linear infinite alternate;
+	  -webkit-animation: sound 0ms -100ms linear infinite alternate;
+  }
+
+.bar {
+  background: #fff;
+  bottom: 1px;
+  height: 3px;
+  position: absolute;
+  width: 6px;
+  animation: none;
+  -webkit-animation: none; }
+
+@keyframes sound {
+  0% {
+    opacity: .35;
+    height: 3px; }
+
+  100% {
+    opacity: 1;
+    height: 52px; } }
+@-webkit-keyframes sound {
+  0% {
+    opacity: .35;
+    height: 3px; }
+
+  100% {
+    opacity: 1;
+    height: 22px; } }
+.bar:nth-child(1) {
+  left: 2px;
+  animation-duration: 674ms;
+  -webkit-animation-duration: 674ms; }
+
+.bar:nth-child(2) {
+  left: 10px;
+  animation-duration: 633ms;
+  -webkit-animation-duration: 633ms; }
+
+.bar:nth-child(3) {
+  left: 18px;
+  animation-duration: 607ms;
+  -webkit-animation-duration: 607ms; }
+
+.bar:nth-child(4) {
+  left: 26px;
+  animation-duration: 658ms;
+  -webkit-animation-duration: 658ms; }
+
+.bar:nth-child(5) {
+  left: 34px;
+  animation-duration: 600ms;
+  -webkit-animation-duration: 600ms; }
+
+.bar:nth-child(6) {
+  left: 42px;
+  animation-duration: 627ms;
+  -webkit-animation-duration: 627ms; }
+
+.bar:nth-child(7) {
+  left: 50px;
+  animation-duration: 641ms;
+  -webkit-animation-duration: 641ms; }
+
+.bar:nth-child(8) {
+  left: 58px;
+  animation-duration: 619ms;
+  -webkit-animation-duration: 619ms; }
+
+.bar:nth-child(9) {
+  left: 66px;
+  animation-duration: 687ms;
+  -webkit-animation-duration: 687ms; }
+
+.bar:nth-child(10) {
+  left: 74px;
+  animation-duration: 642ms;
+  -webkit-animation-duration: 642ms; }
