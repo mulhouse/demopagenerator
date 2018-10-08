@@ -1,5 +1,5 @@
 # Demo Page Generator
-Some bands wants to share their music and don't want to be on big platforms such as bondcamp, spitify, soundclown, ...
+Some bands wants to share their music and don't want to be on big platforms.
 This is a bash script to generate a single static mobile friendly html5 page from media files presents in /audio (and albums subdirs).
 
 Examples : 
@@ -21,7 +21,7 @@ Examples :
 * can add social buttons without tracking with https://sharingbuttons.io/
 
 ## How to use
-1. Clone this project
+1. Fork/clone this project
 2. Setup your audio dir :
     * 1 subdir per album
     * if you use id3, be sure all files are well tagged
@@ -33,7 +33,7 @@ Examples :
     * Icons ([PWA manifest](https://app-manifest.firebaseapp.com/), favicon), background picture
     * Style (colors, font)
     * Change the license
-6. Enjoy (example: push to your own repo then setup github page)
+6. Put it online
 
 ## License
 Do whatever you want
