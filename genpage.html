@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script>
+  document.querySelector("input").onchange = function() {
+    [].slice.call( this.files ).forEach( function(v) {
+          $("body").append("<div>"+v.name+"</div>" );
+    });        
+};
+  </script>
+</head>
+<body>
+<input type="file" webkitdirectory>
+<textarea></textarea>
+</body>
+</html>
