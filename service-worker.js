@@ -1,5 +1,5 @@
 const version = "1.0.0";
-const appName = "Donna";
+const appName = "BandName";
 const CACHES_TO_STORE =[
     "/",
     "/audio/To grow up (1899)/05 San Ku Kai (la guerre).mp3",
