@@ -12,7 +12,7 @@ do
     dir=${dir%/}		# strip trailing /
  #   dir=${dir##*/}		# strip path & leading / (useless here)
     echo $dir
-	# echo "<h2>"$dir"</h2><ol>" >> ../$OUTFILE
+	# echo "<h2>"$dir"</h2><ul>" >> ../$OUTFILE
     cd "$dir"
 	for file in *.mp3
 	do
@@ -23,7 +23,7 @@ do
 		echo "<audio><source src=\"audio/"$dir"/"$file"\" type=\"audio/mpeg\">" >> ../../$OUTFILE
 		echo "This browser doesn't support mp3 playing : install firefox !</audio>" >> ../../$OUTFILE
 	done
-	echo "</ol>" >> ../../$OUTFILE
+	echo "</ul>" >> ../../$OUTFILE
 	cd ..
 done
 
