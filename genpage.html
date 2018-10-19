@@ -2,33 +2,39 @@
 <html>
 <head>
 	<title></title>
-  <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script>
-	  var pageContent = "";
-	  var shareBTN = true;
-	  $('button').onclick(function() {
-	  	$.ajax({url: "templates/random-head.tpl.html", success: function(result){
-        	pageContent += result;
-    	}});
-		    document.querySelector("input").onchange = function() {
-    [].slice.call( this.files ).forEach( function(v) {
-	
-          $("body").append("<div>"+v.name+"</div>" );
-    });        
-};
-		  if(shareBTN) {
-		     $.ajax({url: "templates/shareBtns.tpl.html", success: function(result){
-        	pageContent += result;
-    	}});
-		  }
-		  $.ajax({url: "templates/random-foot.tpl.html", success: function(result){
-        	pageContent += result;
-    	}});
-	  });
-  </script>
+	 var pageContent = "";
+var shareBTN = true;
+$("button").onclick(function() {
+  $.ajax({
+    url: "templates/random-head.tpl.html",
+    success: function(result) {
+      pageContent += result;
+    }
+  });
+  document.querySelector("input").onchange = function() {
+    [].slice.call(this.files).forEach(function(v) {
+      let formattedName = v.name.replace(/[><]/gm, "");
+      $("body").append("<div>" + formattedName + "</div>");
+    });
+  };
+  if (shareBTN) {
+    $.ajax({
+      url: "templates/shareBtns.tpl.html",
+      success: function(result) {
+        pageContent += result;
+      }
+    });
+  }
+  $.ajax({
+    url: "templates/random-foot.tpl.html",
+    success: function(result) {
+      pageContent += result;
+    }
+  });
+});
+</script>
 </head>
 <body>
 <input type="file" webkitdirectory>
