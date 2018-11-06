@@ -21,7 +21,7 @@ do
 		title=$(echo "${name:3:${#name}}")	#strip first 3 chars (tracks #)
 		echo "<li><a href=\"audio/"$dir"/"$file"\" download>"$title"</a></li>" >> ../../$OUTFILE
 		echo "<audio><source src=\"audio/"$dir"/"$file"\" type=\"audio/mpeg\">" >> ../../$OUTFILE
-		echo "This browser doesn't support mp3 playing : install firefox !</audio>" >> ../../$OUTFILE
+		echo "This browser doesn't support mp3 playing : install chrome !</audio>" >> ../../$OUTFILE
 	done
 	echo "</ol>" >> ../../$OUTFILE
 	cd ..
